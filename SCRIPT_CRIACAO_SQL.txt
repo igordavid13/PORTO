@@ -1,0 +1,200 @@
+-- -----------------------------------------------------
+-- Table Equipes
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS Equipes (
+  idEquipes INT NOT NULL,
+  Funcao VARCHAR(45) NOT NULL,
+  Quantidade_funcionarios INT NOT NULL,
+  Turno VARCHAR(45) NOT NULL,
+  Codinome VARCHAR(45) NOT NULL,
+  PRIMARY KEY (idEquipes));
+-- -----------------------------------------------------
+-- Table Area
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS Area (
+  Codigo_espaço_para_container INT NOT NULL,
+  Região VARCHAR(45) NOT NULL,
+  Corredor_Letra VARCHAR(1) NOT NULL,
+  Corredor_numero INT NOT NULL,
+  Setor VARCHAR(45) NOT NULL,
+  Equipes_idEquipes INT NOT NULL,
+  PRIMARY KEY (Codigo_espaço_para_container),
+  --INDEX fk_Area_Equipes1_idx (Equipes_idEquipes ),
+  CONSTRAINT fk_Area_Equipes1
+    FOREIGN KEY (Equipes_idEquipes)
+    REFERENCES Equipes (idEquipes)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+
+
+-- -----------------------------------------------------
+-- Table Navio
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS Navio (
+  Codigo_navio INT NOT NULL,
+  Destino VARCHAR(45) NOT NULL,
+  Origem VARCHAR(45) NOT NULL,
+  Capacidade_containers INT NOT NULL,
+  Capacidade_tripulacao INT NOT NULL,
+  Nome_navio VARCHAR(45) NOT NULL,
+  Foto_navio bytea,
+  Equipes_idEquipes INT NOT NULL,
+  PRIMARY KEY (Codigo_navio),
+  --INDEX fk_Navio_Equipes1_idx (Equipes_idEquipes ) ,
+  CONSTRAINT fk_Navio_Equipes1
+    FOREIGN KEY (Equipes_idEquipes)
+    REFERENCES Equipes (idEquipes)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+
+
+-- -----------------------------------------------------
+-- Table Equipe_Inspetores
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS Registro_de_trabalhos (
+  idTrabalho INT NOT NULL,
+  Equipes_idEquipes INT NOT NULL,
+  Atribuicao_equipe VARCHAR(60) NOT NULL,
+  Horario_inicio_atribuicao VARCHAR(45) NOT NULL,
+  Horario_final_atribuicao VARCHAR(45) NOT NULL,
+  PRIMARY KEY (idTrabalho),
+  --INDEX fk_Inspetores_Equipes1_idx (Equipes_idEquipes ) ,
+  CONSTRAINT fk_Trabalho_Equipes1
+    FOREIGN KEY (Equipes_idEquipes)
+    REFERENCES Equipes (idEquipes)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+
+
+-- -----------------------------------------------------
+-- Table Funcionario
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS Funcionario (
+  CPF INT NOT NULL,
+  Nome VARCHAR(45) NOT NULL,
+  Cargo VARCHAR(45) NOT NULL,
+  Tempo_de_trabalho DATE NOT NULL,
+  Nascimento DATE NOT NULL,
+  Equipes_idEquipes INT NULL,
+  PRIMARY KEY (CPF),
+  --INDEX fk_Funcionario_Equipes_idx (Equipes_idEquipes ) ,
+  --INDEX fk_Funcionario_Inspetores1_idx (Trabalhos_idTrabalhos ) ,
+  CONSTRAINT fk_Funcionario_Equipes
+    FOREIGN KEY (Equipes_idEquipes)
+    REFERENCES Equipes (idEquipes)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+
+
+-- -----------------------------------------------------
+-- Table Caminhao
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS Caminhao (
+  Placa INT NOT NULL,
+  Capacidade_de_containers INT NOT NULL,
+  Ano_fabricacao DATE NOT NULL,
+  Marca VARCHAR(45) NOT NULL,
+  Modelo VARCHAR(45) NOT NULL,
+  Cor VARCHAR(45) NOT NULL,
+  Funcionario_CPF INT NOT NULL,
+  Ultima_revisao DATE NOT NULL,
+  PRIMARY KEY (Placa),
+  --INDEX fk_Caminhao_Funcionario1_idx (Funcionario_idFuncionario ) ,
+  CONSTRAINT fk_Caminhao_Funcionario1
+    FOREIGN KEY (Funcionario_CPF)
+    REFERENCES Funcionario (CPF)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+
+
+-- -----------------------------------------------------
+-- Table Grua
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS Grua (
+  idGrua INT NOT NULL,
+  Altura_metros INT NOT NULL,
+  Alcance_metros INT NOT NULL,
+  Fabricante VARCHAR(45) NOT NULL,
+  Capacidade_de_carga_kg INT NOT NULL,
+  Funcionario_CPF INT NOT NULL,
+  Ultima_revisao DATE NOT NULL,
+  PRIMARY KEY (idGrua),
+  --INDEX fk_Grua_Funcionario1_idx (Funcionario_idFuncionario ) ,
+  CONSTRAINT fk_Grua_Funcionario1
+    FOREIGN KEY (Funcionario_CPF)
+    REFERENCES Funcionario (CPF)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+
+
+-- -----------------------------------------------------
+-- Table Empilhadeira
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS Empilhadeira (
+  Placa INT NOT NULL,
+  Modelo VARCHAR(45) NOT NULL,
+  Fabricante VARCHAR(45) NOT NULL,
+  Capacidade_carga_kg INT NOT NULL,
+  Alcance_metros INT NOT NULL,
+  Ultima_revisao DATE NOT NULL,
+  Funcionario_CPF INT NOT NULL,
+  PRIMARY KEY (Placa),
+  --INDEX fk_Empilhadeira_Funcionario1_idx (Funcionario_idFuncionario ) ,
+  CONSTRAINT fk_Empilhadeira_Funcionario1
+    FOREIGN KEY (Funcionario_CPF)
+    REFERENCES Funcionario (CPF)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+
+
+-- -----------------------------------------------------
+-- Table Container
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS Container (
+  idContainer INT NOT NULL,
+  Peso_KG INT NOT NULL,
+  Tipo_de_carga VARCHAR(45) NOT NULL,
+  Volume_container_litros VARCHAR(45) NOT NULL,
+  Fornecedor VARCHAR(45) NOT NULL,
+  Area_Codigo_espaço_para_container INT NOT NULL,
+  Navio_Codigo_navio INT NOT NULL,
+  PRIMARY KEY (idContainer),
+  --INDEX fk_Container_Area1_idx (Area_Codigo_espaço_para_container ) ,
+  --INDEX fk_Container_Navio1_idx (Navio_Codigo_navio ) ,
+  CONSTRAINT fk_Container_Area1
+    FOREIGN KEY (Area_Codigo_espaço_para_container)
+    REFERENCES Area (Codigo_espaço_para_container)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT fk_Container_Navio1
+    FOREIGN KEY (Navio_Codigo_navio)
+    REFERENCES Navio (Codigo_navio)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+
+
+-- -----------------------------------------------------
+-- Table Registros_Atividade_Navios
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS Registros_Atividade_Navios (
+  idRegistros INT NOT NULL,
+  Containers_embarcados INT NOT NULL,
+  Containers_desembarcados INT NOT NULL,
+  Dia_chegada  DATE NOT NULL,
+  Dia_partida DATE NULL,
+  Navio_Codigo_navio INT NOT NULL,
+  PRIMARY KEY (idRegistros),
+  --INDEX fk_Registros_Atividade_Navios_Navio1_idx (Navio_Codigo_navio ) ,
+  CONSTRAINT fk_Registros_Atividade_Navios_Navio1
+    FOREIGN KEY (Navio_Codigo_navio)
+    REFERENCES Navio (Codigo_navio)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
