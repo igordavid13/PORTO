@@ -1,7 +1,7 @@
 from tkinter import *
 
 from persistencia import *
-
+#IGOR DAVID
 def abre_tela_areas():
 
     def adiciona_areas():
