@@ -902,6 +902,10 @@ def abre_tela_container():
 
     janelaFuncionarios.mainloop()
 
+def select_tela_view():
+    members = [('ID do container', 'Código de espaço para container', 'Código do navio')]
+    mostra_tela_view(members)
+
 
 janelaPrincipal = Tk()
 
@@ -910,11 +914,6 @@ janelaPrincipal.title("Banco de Dados - Porto")
 # Titulo
 Bem_Vindo = Label(janelaPrincipal, text="Bem vindo ao banco de dados do porto de Suape")
 Bem_Vindo.grid(column=1, row=0, padx=10, pady=10)
-
-#lol = 10*['', '','', '','', '','', '','', '' ]
-#for i in range(10):
-#    lol[i] = Label(janelaPrincipal, text="Bem vindo ao banco de dados do porto de Suape")
-#    lol[i].grid(column=1, row=10+i, padx=10, pady=10)
 
 # Botoes
 botaoArea = Button(janelaPrincipal, text="Areas", command=abre_tela_areas, height=5, width=30)
@@ -947,8 +946,12 @@ botaoEquipesInspecao.grid(column=2, row=3, padx=10, pady=10)
 botaoContainer = Button(janelaPrincipal, text="Containers", command=abre_tela_container, height=5, width=30)
 botaoContainer.grid(column=1, row=4, padx=10, pady=10)
 
-Consultas_Especiais = Label(janelaPrincipal, text="Consultas especiais de tabelas (3 tabelas relacionadas)")
-Consultas_Especiais.grid(column=1, row=5, padx=10, pady=10)
+# Consulta view
 
+Consulta_View = Label(janelaPrincipal, text="Consulta view")
+Consulta_View.grid(column=1, row=5, padx=10, pady=10)
+
+botaoView = Button(janelaPrincipal, text="Containers", command=select_tela_view, height=5, width=30)
+botaoView.grid(column=1, row=6, padx=10, pady=10)
 
 janelaPrincipal.mainloop()

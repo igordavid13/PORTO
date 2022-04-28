@@ -405,8 +405,16 @@ def deleta_containers_persistencia(deletar):
     VALUE = (deletar,)
 
     connection(SCRIPT, VALUE, None)
-     
 
+# ==============================================================================================
+
+# View
+ 
+def mostra_tela_view(members):
+
+    SCRIPT = '''SELECT * FROM vw_container_area_navio'''
+    # VALUE = ''''''
+    connection(SCRIPT, None, members)
 
 
 
