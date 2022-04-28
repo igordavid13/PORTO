@@ -464,7 +464,7 @@ def abre_tela_caminhoes():
 
     def mostra_caminhoes():
 
-        members = [('Placa do caminhão', 'Capacidade de containers', 'Ano de fabricação', 'Marca do caminhão', 'Modelo do caminhão', 'Cor do caminhão', 'Última revisão do caminhão', 'CPF do funcionário responsável')]
+        members = [('Placa do caminhão', 'Capacidade de containers', 'Ano de fabricação', 'Marca do caminhão', 'Modelo do caminhão', 'Cor do caminhão', 'CPF do funcionário responsável', 'Última revisão do caminhão')]
 
         mostra_caminhoes_persistencia(members)
         #print("Uau, caminhões!")
@@ -562,7 +562,7 @@ def abre_tela_gruas():
 
     def mostra_gruas():
 
-        members =[('ID da grua', 'Altura em metros', 'Alcance em metros', 'Fabricante', 'Capacidade de carga em kg', 'Última revisão', 'CPF do funcionário responsável')]
+        members =[('ID da grua', 'Altura em metros', 'Alcance em metros', 'Fabricante', 'Capacidade de carga em kg', 'CPF do funcionário responsável', 'Última revisão')]
 
         mostra_gruas_persistencia(members)
         #print("Uau, gruas!")
@@ -946,5 +946,9 @@ botaoEquipesInspecao.grid(column=2, row=3, padx=10, pady=10)
 
 botaoContainer = Button(janelaPrincipal, text="Containers", command=abre_tela_container, height=5, width=30)
 botaoContainer.grid(column=1, row=4, padx=10, pady=10)
+
+Consultas_Especiais = Label(janelaPrincipal, text="Consultas especiais de tabelas (3 tabelas relacionadas)")
+Consultas_Especiais.grid(column=1, row=5, padx=10, pady=10)
+
 
 janelaPrincipal.mainloop()

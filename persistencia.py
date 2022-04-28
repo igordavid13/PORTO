@@ -59,7 +59,6 @@ def connection(SCRIPT, VALUE, members):
             for record in cur.fetchall():
                 #instance = record
                 #instance.pop(-2)
-                if record
                 members.append(record)
             gui = Tk()
             table = Table(gui, len(members), len(members[0]), members)
