@@ -2,6 +2,7 @@ from tkinter import *
 
 from persistencia import *
 #IGOR DAVID e LUCA BARBA
+
 def abre_tela_areas():
 
     def adiciona_areas():
@@ -17,12 +18,10 @@ def abre_tela_areas():
 
     def mostra_areas():
         
-        janela_mostra_areas = Tk()
+        members = [('Código espaço para containers', 'Região', 'Corredor Letra', 'Corredor Numero', 'Setor', 'ID da equipe')]
 
-        mostra_areas_persistencia()
+        mostra_areas_persistencia(members)
         #print("Uau, areas!")
-
-        janela_mostra_areas.mainloop()
 
     def altera_areas():
         codigo_espaco_container = e1.get()
@@ -99,14 +98,17 @@ def abre_tela_navios():
         capacidade_container = e4.get()
         capacidade_tripulacao = e5.get()
         nome_navio = e6.get()
-        cor_navio = e7.get()
+        foto_navio = e7.get()
         id_equipe = e8.get()
 
-        adiciona_navios_persistencia(codigo_navio, origem, destino, capacidade_container, capacidade_tripulacao, nome_navio, cor_navio, id_equipe)
+        adiciona_navios_persistencia(codigo_navio, origem, destino, capacidade_container, capacidade_tripulacao, nome_navio, foto_navio, id_equipe)
         #print("Uau, adicionou " + str(e1.get()))
 
     def mostra_navios():
-        mostra_navios_persistencia()
+        
+        members = [('Código do Navio', 'Destino', 'Origem', 'Capacidade de containers', 'Capacidade de tripulação', 'Nome do navio', 'Binario foto', 'ID da equipe')]
+
+        mostra_navios_persistencia(members)
         print("Uau, navios!")
 
     def mostra_imagem_navio():
@@ -182,13 +184,13 @@ def abre_tela_navios():
     e6 = Entry(janelaFuncionarios)
     e6.grid(row=9, column=1)
 
-    Label(janelaFuncionarios, text="Cor do navio:").grid(row=10, column=0)
+    Label(janelaFuncionarios, text="Foto navio:").grid(row=10, column=0)
     e7 = Entry(janelaFuncionarios)
     e7.grid(row=10, column=1)
 
-    Label(janelaFuncionarios, text="ID da equipe:").grid(row=11, column=0)
+    Label(janelaFuncionarios, text="ID da equipe:").grid(row=10, column=0)
     e8 = Entry(janelaFuncionarios)
-    e8.grid(row=11, column=1)
+    e8.grid(row=10, column=1)
     
 
     janelaFuncionarios.mainloop()
@@ -206,7 +208,10 @@ def abre_tela_equipes():
         #print("Uau, adicionou " + str(e1.get()))
 
     def mostra_equipes():
-        mostra_equipes_persistencia()
+
+        members = [('ID da equipe', 'Função da equipe', 'Quantidade de funcionários', 'Turno', 'Codinome da equipe')]
+
+        mostra_equipes_persistencia(members)
         #print("Uau, equipes!")
 
     def altera_equipes():
@@ -283,7 +288,10 @@ def abre_tela_atividades_navio():
         #print("Uau, adicionou " + str(e1.get()))
 
     def mostra_atividades():
-        mostra_atividades_navios_persistencia()
+
+        members = [('ID da atividade', 'Quantidade de containers embarcados', 'Quantidade de containers desembarcados', 'Dia de chegada', 'Dia de partida', 'ID do navio')]
+
+        mostra_atividades_navios_persistencia(members)
         #print("Uau, atividades de navios!")
 
     def altera_atividades():
@@ -311,16 +319,16 @@ def abre_tela_atividades_navio():
     # =======================================================================================================
     #Botões
 
-    botaoCreate = Button(janelaFuncionarios, text="Adicionar area", command=adiciona_atividades, height=5, width=30)
+    botaoCreate = Button(janelaFuncionarios, text="Adicionar atividade", command=adiciona_atividades, height=5, width=30)
     botaoCreate.grid(column=0, row=1, padx=10, pady=10)
 
-    botaoRead = Button(janelaFuncionarios, text="Mostrar areas", command=mostra_atividades, height=5, width=30)
+    botaoRead = Button(janelaFuncionarios, text="Mostrar atividades", command=mostra_atividades, height=5, width=30)
     botaoRead.grid(column=1, row=1, padx=10, pady=10)
 
-    botaoUpdate = Button(janelaFuncionarios, text="Atualizar areas", command=altera_atividades, height=5, width=30)
+    botaoUpdate = Button(janelaFuncionarios, text="Atualizar atividades", command=altera_atividades, height=5, width=30)
     botaoUpdate.grid(column=2, row=1, padx=10, pady=10)
 
-    botaoDelete = Button(janelaFuncionarios, text="Deletar areas", command=deleta_atividades, height=5, width=30)
+    botaoDelete = Button(janelaFuncionarios, text="Deletar atividades", command=deleta_atividades, height=5, width=30)
     botaoDelete.grid(column=3, row=1, padx=10, pady=10)
 
     # =======================================================================================================
@@ -366,7 +374,10 @@ def abre_tela_funcionarios():
         #print("Uau, adicionou " + str(e1.get()))
 
     def mostra_funcionarios():
-        mostra_funcionarios_persistencia()
+
+        members = [('CPF do funcionário', 'Nome do funcionário', 'Cargo do funcionário', 'Tempo de trabalho', 'Data de nascimento', 'ID da equipe')]
+
+        mostra_funcionarios_persistencia(members)
         #print("Uau, funcionarios!")
 
     def altera_funcionarios():
@@ -452,7 +463,10 @@ def abre_tela_caminhoes():
         #print("Uau, adicionou " + str(e1.get()))
 
     def mostra_caminhoes():
-        mostra_caminhoes_persistencia()
+
+        members = [('Placa do caminhão', 'Capacidade de containers', 'Ano de fabricação', 'Marca do caminhão', 'Modelo do caminhão', 'Cor do caminhão', 'Última revisão do caminhão', 'CPF do funcionário responsável')]
+
+        mostra_caminhoes_persistencia(members)
         #print("Uau, caminhões!")
 
     def altera_caminhoes():
@@ -547,7 +561,10 @@ def abre_tela_gruas():
         #print("Uau, adicionou " + str(e1.get()))
 
     def mostra_gruas():
-        mostra_gruas_persistencia()
+
+        members =[('ID da grua', 'Altura em metros', 'Alcance em metros', 'Fabricante', 'Capacidade de carga em kg', 'Última revisão', 'CPF do funcionário responsável')]
+
+        mostra_gruas_persistencia(members)
         #print("Uau, gruas!")
 
     def altera_gruas():
@@ -636,7 +653,10 @@ def abre_tela_empilhadeiras():
         #print("Uau, adicionou " + str(e1.get()))
 
     def mostra_empilhadeiras():
-        mostra_empilhadeiras_persistencia()
+
+        members = [('Placa', 'Modelo', 'Fabricante', 'Capacidade de carga em kg', 'Alcance em metros', 'Última revisão', 'CPF do funcionário responsável')]
+
+        mostra_empilhadeiras_persistencia(members)
         #print("Uau, empilhadeiras!")
 
     def altera_empilhadeiras():
@@ -724,7 +744,10 @@ def abre_tela_atividades_porto():
         #print("Uau, adicionou " + str(e1.get()))
 
     def mostra_atividades():
-        mostra_atividades_porto_persistencia()
+
+        members = [('ID da atividade', 'ID da equipe', 'Atribuição da equipe', 'Horário de inicio da atribuição', 'Horário de final da atribuição')]
+
+        mostra_atividades_porto_persistencia(members)
         #print("Uau, atividades do porto!")
 
     def altera_atividades():
@@ -802,7 +825,10 @@ def abre_tela_container():
         #print("Uau, adicionou " + str(e1.get()))
 
     def mostra_container():
-        mostra_containers_persistencia()
+
+        members = [('ID do container', 'Peso do container em kg', 'Tipo de carga', 'Volume do container', 'Fornecedor do container', 'Código de espaço para container', 'Código de navio associado')]
+
+        mostra_containers_persistencia(members)
         #print("Uau, containers!")
 
     def altera_container():

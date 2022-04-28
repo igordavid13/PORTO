@@ -1,3 +1,5 @@
+SET datestyle TO SQL, DMY;
+
 -- -----------------------------------------------------
 -- Table Equipes
 -- -----------------------------------------------------
@@ -12,13 +14,13 @@ CREATE TABLE IF NOT EXISTS Equipes (
 -- Table Area
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS Area (
-  Codigo_espaço_para_container INT NOT NULL,
+  Codigo_espaco_para_container INT NOT NULL,
   Região VARCHAR(45) NOT NULL,
   Corredor_Letra VARCHAR(1) NOT NULL,
   Corredor_numero INT NOT NULL,
   Setor VARCHAR(45) NOT NULL,
   Equipes_idEquipes INT NOT NULL,
-  PRIMARY KEY (Codigo_espaço_para_container),
+  PRIMARY KEY (Codigo_espaco_para_container),
   --INDEX fk_Area_Equipes1_idx (Equipes_idEquipes ),
   CONSTRAINT fk_Area_Equipes1
     FOREIGN KEY (Equipes_idEquipes)
@@ -163,14 +165,14 @@ CREATE TABLE IF NOT EXISTS Container (
   Tipo_de_carga VARCHAR(45) NOT NULL,
   Volume_container_litros VARCHAR(45) NOT NULL,
   Fornecedor VARCHAR(45) NOT NULL,
-  Area_Codigo_espaço_para_container INT NOT NULL,
+  Area_Codigo_espaco_para_container INT NOT NULL,
   Navio_Codigo_navio INT NOT NULL,
   PRIMARY KEY (idContainer),
-  --INDEX fk_Container_Area1_idx (Area_Codigo_espaço_para_container ) ,
+  --INDEX fk_Container_Area1_idx (Area_Codigo_espaco_para_container ) ,
   --INDEX fk_Container_Navio1_idx (Navio_Codigo_navio ) ,
   CONSTRAINT fk_Container_Area1
-    FOREIGN KEY (Area_Codigo_espaço_para_container)
-    REFERENCES Area (Codigo_espaço_para_container)
+    FOREIGN KEY (Area_Codigo_espaco_para_container)
+    REFERENCES Area (Codigo_espaco_para_container)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   CONSTRAINT fk_Container_Navio1
@@ -189,7 +191,7 @@ CREATE TABLE IF NOT EXISTS Registros_Atividade_Navios (
   Containers_embarcados INT NOT NULL,
   Containers_desembarcados INT NOT NULL,
   Dia_chegada  DATE NOT NULL,
-  Dia_partida DATE NULL,
+  Dia_partida DATE NOT NULL,
   Navio_Codigo_navio INT NOT NULL,
   PRIMARY KEY (idRegistros),
   --INDEX fk_Registros_Atividade_Navios_Navio1_idx (Navio_Codigo_navio ) ,
@@ -220,7 +222,6 @@ SELECT c.idcontainer, a.codigo_espaco_para_container, navio.codigo_navio
 FROM container c, area a, navio  
 WHERE c.navio_codigo_navio = navio.codigo_navio and c.area_codigo_espaco_para_container = a.codigo_espaco_para_container
 
-SELECT * FROM vw_container_area_navio
 
 
 
