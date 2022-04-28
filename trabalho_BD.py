@@ -184,13 +184,13 @@ def abre_tela_navios():
     e6 = Entry(janelaFuncionarios)
     e6.grid(row=9, column=1)
 
-    Label(janelaFuncionarios, text="Foto navio:").grid(row=10, column=0)
+    Label(janelaFuncionarios, text="Diretorio foto em C:\\arquivo.jpg navio:").grid(row=10, column=0)
     e7 = Entry(janelaFuncionarios)
     e7.grid(row=10, column=1)
 
-    Label(janelaFuncionarios, text="ID da equipe:").grid(row=10, column=0)
+    Label(janelaFuncionarios, text="ID da equipe:").grid(row=11, column=0)
     e8 = Entry(janelaFuncionarios)
-    e8.grid(row=10, column=1)
+    e8.grid(row=11, column=1)
     
 
     janelaFuncionarios.mainloop()

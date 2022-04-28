@@ -132,7 +132,7 @@ def adiciona_navios_persistencia(codigo_navio, origem, destino, capacidade_conta
     image = open(foto_navio, 'rb').read()
     SCRIPT = '''INSERT INTO navio VALUES(%s,%s,%s,%s,%s,%s,%s,%s);'''
     VALUE = (codigo_navio, destino, origem, capacidade_container, capacidade_tripulacao, nome_navio, psycopg2.Binary(image), equipes_idequipes)
-    connection(SCRIPT, VALUE)
+    connection(SCRIPT, VALUE, None)
 
 def mostra_navios_persistencia(members):
 
@@ -149,14 +149,14 @@ def altera_navios_persistencia(codigo_navio, origem, destino, capacidade_contain
     SCRIPT = 'UPDATE navio SET  origem = %s, destino =%s, capacidade_containers = %s, capacidade_tripulacao = %s, nome_navio = %s, foto_navio = %s, equipes_idequipes = %s  WHERE codigo_navio = %s' 
     VALUE = (origem, destino, capacidade_container, capacidade_tripulacao, nome_navio, psycopg2.Binary(image), equipes_idequipes, codigo_navio)
 
-    connection(SCRIPT, VALUE)
+    connection(SCRIPT, VALUE, None)
 
 def deleta_navios_persistencia(codigo_navio):
 
     SCRIPT = '''DELETE FROM navio WHERE codigo_navio = %s'''
     VALUE = (codigo_navio,)
 
-    connection(SCRIPT, VALUE)
+    connection(SCRIPT, VALUE, None)
 
 # ==============================================================================================
 
