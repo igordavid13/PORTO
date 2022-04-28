@@ -1,7 +1,7 @@
 from tkinter import *
 
 from persistencia import *
-#IGOR DAVID e LUCA BARBA
+#IGOR DAVID e LUCA BARBA lol
 def abre_tela_areas():
 
     def adiciona_areas():
