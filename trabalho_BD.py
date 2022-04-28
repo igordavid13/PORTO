@@ -951,7 +951,7 @@ botaoContainer.grid(column=1, row=4, padx=10, pady=10)
 Consulta_View = Label(janelaPrincipal, text="Consulta view")
 Consulta_View.grid(column=1, row=5, padx=10, pady=10)
 
-botaoView = Button(janelaPrincipal, text="Containers", command=select_tela_view, height=5, width=30)
+botaoView = Button(janelaPrincipal, text="View", command=select_tela_view, height=5, width=30)
 botaoView.grid(column=1, row=6, padx=10, pady=10)
 
 janelaPrincipal.mainloop()
