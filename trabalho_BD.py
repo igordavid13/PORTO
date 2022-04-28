@@ -915,43 +915,57 @@ janelaPrincipal.title("Banco de Dados - Porto")
 Bem_Vindo = Label(janelaPrincipal, text="Bem vindo ao banco de dados do porto de Suape")
 Bem_Vindo.grid(column=1, row=0, padx=10, pady=10)
 
+
 # Botoes
 botaoArea = Button(janelaPrincipal, text="Areas", command=abre_tela_areas, height=5, width=30)
-botaoArea.grid(column=0, row=1, padx=10, pady=10)
+botaoArea.grid(column=0, row=1, padx=10, pady=10, sticky="nsew")
 
 botaoNavio = Button(janelaPrincipal, text="Navios", command=abre_tela_navios, height=5, width=30)
-botaoNavio.grid(column=1, row=1, padx=10, pady=10)
+botaoNavio.grid(column=1, row=1, padx=10, pady=10, sticky="nsew")
 
 botaoEquipes = Button(janelaPrincipal, text="Equipes", command=abre_tela_equipes, height=5, width=30)
-botaoEquipes.grid(column=2, row=1, padx=10, pady=10)
+botaoEquipes.grid(column=2, row=1, padx=10, pady=10, sticky="nsew")
 
 botaoProcessos = Button(janelaPrincipal, text="Registros de atividades (Navio)", command=abre_tela_atividades_navio, height=5, width=30)
-botaoProcessos.grid(column=0, row=2, padx=10, pady=10)
+botaoProcessos.grid(column=0, row=2, padx=10, pady=10, sticky="nsew")
 
 botaoFuncionarios = Button(janelaPrincipal, text="Funcionarios", command=abre_tela_funcionarios, height=5, width=30)
-botaoFuncionarios.grid(column=1, row=2, padx=10, pady=10)
+botaoFuncionarios.grid(column=1, row=2, padx=10, pady=10, sticky="nsew")
 
 botaoCaminhoes = Button(janelaPrincipal, text="Caminhoes", command=abre_tela_caminhoes, height=5, width=30)
-botaoCaminhoes.grid(column=2, row=2, padx=10, pady=10)
+botaoCaminhoes.grid(column=2, row=2, padx=10, pady=10, sticky="nsew")
 
 botaoGuindastes = Button(janelaPrincipal, text="Gruas", command=abre_tela_gruas, height=5, width=30)
-botaoGuindastes.grid(column=0, row=3, padx=10, pady=10)
+botaoGuindastes.grid(column=0, row=3, padx=10, pady=10, sticky="nsew")
 
 botaoEmpilhadeiras = Button(janelaPrincipal, text="Empilhadeiras", command=abre_tela_empilhadeiras, height=5, width=30)
-botaoEmpilhadeiras.grid(column=1, row=3, padx=10, pady=10)
+botaoEmpilhadeiras.grid(column=1, row=3, padx=10, pady=10, sticky="nsew")
 
 botaoEquipesInspecao = Button(janelaPrincipal, text="Registros de atividades (Porto)", command=abre_tela_atividades_porto, height=5, width=30)
-botaoEquipesInspecao.grid(column=2, row=3, padx=10, pady=10)
+botaoEquipesInspecao.grid(column=2, row=3, padx=10, pady=10, sticky="nsew")
 
 botaoContainer = Button(janelaPrincipal, text="Containers", command=abre_tela_container, height=5, width=30)
-botaoContainer.grid(column=1, row=4, padx=10, pady=10)
+botaoContainer.grid(column=1, row=4, padx=10, pady=10, sticky="nsew")
+
+
 
 # Consulta view
 
 Consulta_View = Label(janelaPrincipal, text="Consulta view")
-Consulta_View.grid(column=1, row=5, padx=10, pady=10)
+Consulta_View.grid(column=1, row=5, padx=10, pady=10, sticky="nsew")
 
 botaoView = Button(janelaPrincipal, text="View", command=select_tela_view, height=5, width=30)
-botaoView.grid(column=1, row=6, padx=10, pady=10)
+botaoView.grid(column=1, row=6, padx=10, pady=10, sticky="nsew")
+
+# Define escalabilidade da interface
+Grid.columnconfigure(janelaPrincipal, 0, weight = 1)
+Grid.columnconfigure(janelaPrincipal, 1, weight = 1)
+Grid.columnconfigure(janelaPrincipal, 2, weight = 1)
+Grid.rowconfigure(janelaPrincipal, 1, weight = 1)
+Grid.rowconfigure(janelaPrincipal, 2, weight = 1)
+Grid.rowconfigure(janelaPrincipal, 3, weight = 1)
+Grid.rowconfigure(janelaPrincipal, 4, weight = 1)
+Grid.rowconfigure(janelaPrincipal, 5, weight = 1)
+Grid.rowconfigure(janelaPrincipal, 6, weight = 1)
 
 janelaPrincipal.mainloop()

@@ -55,13 +55,38 @@ def connection(SCRIPT, VALUE, members):
         cur = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
 
         if VALUE == None:
+                
+            gui = Tk()
+            gui.geometry("1500x500")
+
+            main_frame = Frame(gui)
+            main_frame.pack(fill=BOTH, expand=1)
+
+            my_canvas = Canvas(main_frame)
+
+            my_scrollbar = Scrollbar(main_frame, orient=VERTICAL, command=my_canvas.yview)
+
+            hor_scrollbar = Scrollbar(main_frame, orient=HORIZONTAL, command=my_canvas.xview)
+            
+            my_scrollbar.pack(side=RIGHT, fill=Y)
+            hor_scrollbar.pack(side=BOTTOM, fill=X)
+            my_canvas.pack(side=LEFT, fill=BOTH, expand=1)
+
+            my_canvas.configure(yscrollcommand=my_scrollbar.set, xscrollcommand=hor_scrollbar.set)
+            my_canvas.bind('<Configure>', lambda e: my_canvas.configure(scrollregion=my_canvas.bbox("all")))
+
+            second_frame = Frame(my_canvas)
+
+            my_canvas.create_window((0,0), window=second_frame, anchor="nw")
+            
             cur.execute(SCRIPT, None)
             for record in cur.fetchall():
                 #instance = record
                 #instance.pop(-2)
                 members.append(record)
-            gui = Tk()
-            table = Table(gui, len(members), len(members[0]), members)
+
+            table = Table(second_frame, len(members), len(members[0]), members)
+            
             gui.mainloop()
             
         elif VALUE == 'imagem':
