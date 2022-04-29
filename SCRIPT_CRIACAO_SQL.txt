@@ -223,6 +223,32 @@ FROM container c, area a, navio
 WHERE c.navio_codigo_navio = navio.codigo_navio and c.area_codigo_espaco_para_container = a.codigo_espaco_para_container
 
 
+--CRIAÇÃO DE PROCEDURE PARA CONSULTAR EXPERIÊNCIA DE FUNCIONÁRIO
+
+
+CREATE OR REPLACE PROCEDURE proc_experiencia_func(numeric)
+LANGUAGE 'plpgsql'
+AS $$
+DECLARE 
+	pk ALIAS FOR $1;
+	tempo integer;
+BEGIN
+	SELECT EXTRACT(YEAR FROM AGE(tempo_de_trabalho)) AS tempo_de_sevico into tempo from funcionario where cpf = pk;
+	--COMMIT;
+	IF tempo < 6  THEN
+    RAISE NOTICE 'Funcionário de código % é JUNIOR', pk;
+    END IF;
+
+    IF tempo > 5  and tempo < 11 THEN
+    RAISE NOTICE 'Funcionário de código % é EXPERT', pk;
+	END IF; 
+				   
+    IF tempo > 10 THEN
+    RAISE NOTICE 'Funcionário de código % é SENIOR', pk;
+    END IF;
+END;
+$$;	
+
 
 
 

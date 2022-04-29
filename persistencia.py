@@ -38,7 +38,7 @@ def connection(SCRIPT, VALUE, members):
     hostname = 'localhost'
     database = 'Porto'
     username = 'postgres'
-    pwd = '030601'
+    pwd = 'Capacete7'
     port_id = 5432
 
     conn = None
@@ -104,10 +104,11 @@ def connection(SCRIPT, VALUE, members):
             
 
         else:
-            print("execute")
             cur.execute(SCRIPT,VALUE)
-
-        conn.commit()
+            conn.commit()
+            if(members == 'PROCEDURE'):
+                print(conn.notices)
+            
       
     except Exception as error:
         print(error)
@@ -440,6 +441,15 @@ def mostra_tela_view(members):
     SCRIPT = '''SELECT * FROM vw_container_area_navio'''
     # VALUE = ''''''
     connection(SCRIPT, None, members)
+
+# ==============================================================================================
+
+# Procedure
+
+def consulta_experiencia_persistencia(pk):
+    SCRIPT = '''CALL proc_experiencia_func(%s)'''
+    VALUE = (pk)
+    connection(SCRIPT, VALUE, 'PROCEDURE')
 
 
 
