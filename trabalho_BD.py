@@ -3,32 +3,6 @@ from tkinter import *
 from persistencia import *
 #IGOR DAVID e LUCA BARBA
 
-
-def abre_tela_procedure():
-    def consulta_experiencia():
-        pk = e1.get()
-        consulta_experiencia_persistencia(pk)
-
-
-
-
-    janelaprocedeure = Tk()
-
-    bem_vindo_funcionario = Label(janelaprocedeure, text="Experiência Funcionário:")
-    bem_vindo_funcionario.grid(column=0, row=0, padx=10, pady=10)
-
-    #BOTÃO
-    botaoCreate = Button(janelaprocedeure, text="Consulta experiência", command=consulta_experiencia, height=5, width=30)
-    botaoCreate.grid(column=0, row=1, padx=10, pady=10)
-    # Inputs de texto
-    Label(janelaprocedeure, text="Código do funcionário:").grid(row=4, column=0)
-    e1 = Entry(janelaprocedeure)
-    e1.grid(row=4, column=1)
-
-    janelaprocedeure.mainloop() 
-
-
-
 def abre_tela_areas():
 
     def adiciona_areas():
@@ -1041,6 +1015,34 @@ def abre_tela_container():
 def select_tela_view():
     members = [('ID do container', 'Código de espaço para container', 'Código do navio')]
     mostra_tela_view(members)
+
+def abre_tela_procedure():
+    def consulta_experiencia():
+        pk = e1.get()
+        consulta_experiencia_persistencia(pk)
+
+
+
+
+    janelaprocedeure = Tk()
+
+    bem_vindo_funcionario = Label(janelaprocedeure, text="Experiência Funcionário:")
+    bem_vindo_funcionario.grid(column=0, row=0, padx=10, pady=10)
+
+    #BOTÃO
+    botaoCreate = Button(janelaprocedeure, text="Consulta experiência", command=consulta_experiencia, height=3, width=20)
+    botaoCreate.grid(column=2, row=0, padx=10, pady=10)
+    # Inputs de texto
+    Label(janelaprocedeure, text="Código do funcionário:").grid(row=0, column=0)
+    e1 = Entry(janelaprocedeure)
+    e1.grid(row=0, column=1)
+
+    janelaprocedeure.mainloop() 
+
+
+
+
+
 
 
 janelaPrincipal = Tk()

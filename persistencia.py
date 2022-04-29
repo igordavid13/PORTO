@@ -38,7 +38,7 @@ def connection(SCRIPT, VALUE, members):
     hostname = 'localhost'
     database = 'Porto'
     username = 'postgres'
-    pwd = 'Capacete7'
+    pwd = '030601'
     port_id = 5432
 
     conn = None
@@ -107,8 +107,17 @@ def connection(SCRIPT, VALUE, members):
             cur.execute(SCRIPT,VALUE)
             conn.commit()
             if(members == 'PROCEDURE'):
-                print(conn.notices)
-            
+                #print(conn.notices)
+                resultado = conn.notices[0]
+
+                tela_experiencia = Tk()
+
+                resultado = resultado.split(":")[1]
+                resultado = resultado.split("\\")[0]
+                resultado = resultado.strip()
+                Label(tela_experiencia, text=resultado).grid(row=0, column=0)
+
+                tela_experiencia.mainloop()
       
     except Exception as error:
         print(error)
@@ -117,7 +126,7 @@ def connection(SCRIPT, VALUE, members):
             cur.close()
         if conn is not None:    
             conn.close()
-  
+
 
 # ==============================================================================================
 
