@@ -75,43 +75,54 @@ def abre_tela_areas():
     #Botões
 
     botaoCreate = Button(janelaFuncionarios, text="Adicionar area", command=adiciona_areas, height=5, width=30)
-    botaoCreate.grid(column=0, row=1, padx=10, pady=10)
+    botaoCreate.grid(column=0, row=1, padx=10, pady=10, sticky="nsew")
 
     botaoRead = Button(janelaFuncionarios, text="Mostrar areas", command=mostra_areas, height=5, width=30)
-    botaoRead.grid(column=1, row=1, padx=10, pady=10)
+    botaoRead.grid(column=1, row=1, padx=10, pady=10, sticky="nsew")
 
     botaoUpdate = Button(janelaFuncionarios, text="Atualizar areas", command=altera_areas, height=5, width=30)
-    botaoUpdate.grid(column=2, row=1, padx=10, pady=10)
+    botaoUpdate.grid(column=2, row=1, padx=10, pady=10, sticky="nsew")
 
     botaoDelete = Button(janelaFuncionarios, text="Deletar areas", command=deleta_areas, height=5, width=30)
-    botaoDelete.grid(column=3, row=1, padx=10, pady=10)
+    botaoDelete.grid(column=3, row=1, padx=10, pady=10, sticky="nsew")
 
     # =======================================================================================================
     # Inputs de texto
 
-    Label(janelaFuncionarios, text="Código de espaço para container:").grid(row=4, column=0)
+    Label(janelaFuncionarios, text="Código de espaço para container:").grid(row=4, column=0, sticky="nsew")
     e1 = Entry(janelaFuncionarios)
-    e1.grid(row=4, column=1)
+    e1.grid(row=4, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Região:").grid(row=5, column=0)
+    Label(janelaFuncionarios, text="Região:").grid(row=5, column=0, sticky="nsew")
     e2 = Entry(janelaFuncionarios)
-    e2.grid(row=5, column=1)
+    e2.grid(row=5, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Corredor (letra):").grid(row=6, column=0)
+    Label(janelaFuncionarios, text="Corredor (letra):").grid(row=6, column=0, sticky="nsew")
     e3 = Entry(janelaFuncionarios)
-    e3.grid(row=6, column=1)
+    e3.grid(row=6, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Corredor (numero)").grid(row=7, column=0)
+    Label(janelaFuncionarios, text="Corredor (numero)").grid(row=7, column=0, sticky="nsew")
     e4 = Entry(janelaFuncionarios)
-    e4.grid(row=7, column=1)
+    e4.grid(row=7, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Setor:").grid(row=8, column=0)
+    Label(janelaFuncionarios, text="Setor:").grid(row=8, column=0, sticky="nsew")
     e5 = Entry(janelaFuncionarios)
-    e5.grid(row=8, column=1)
+    e5.grid(row=8, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="ID de equipes relacionadas:").grid(row=9, column=0)
+    Label(janelaFuncionarios, text="ID de equipes relacionadas:").grid(row=9, column=0, sticky="nsew")
     e6 = Entry(janelaFuncionarios)
-    e6.grid(row=9, column=1)
+    e6.grid(row=9, column=1, sticky="nsew")
+
+    Grid.columnconfigure(janelaFuncionarios, 0, weight = 1)
+    Grid.columnconfigure(janelaFuncionarios, 1, weight = 1)
+    Grid.columnconfigure(janelaFuncionarios, 2, weight = 1)
+    Grid.columnconfigure(janelaFuncionarios, 3, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 1, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 2, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 3, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 4, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 5, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 6, weight = 1)
 
     janelaFuncionarios.mainloop()
 
@@ -169,55 +180,68 @@ def abre_tela_navios():
     #Botões
 
     botaoCreate = Button(janelaFuncionarios, text="Adicionar navio", command=adiciona_navios, height=5, width=30)
-    botaoCreate.grid(column=0, row=1, padx=10, pady=10)
+    botaoCreate.grid(column=0, row=1, padx=10, pady=10, sticky="nsew")
 
     botaoRead = Button(janelaFuncionarios, text="Mostrar navios", command=mostra_navios, height=5, width=30)
-    botaoRead.grid(column=1, row=1, padx=10, pady=10)
+    botaoRead.grid(column=1, row=1, padx=10, pady=10, sticky="nsew")
 
     botaoRead = Button(janelaFuncionarios, text="Mostra imagem navio", command=mostra_imagem_navio, height=5, width=30)
-    botaoRead.grid(column=2, row=1, padx=10, pady=10)
+    botaoRead.grid(column=2, row=1, padx=10, pady=10, sticky="nsew")
 
     botaoUpdate = Button(janelaFuncionarios, text="Atualizar navios", command=altera_navios, height=5, width=30)
-    botaoUpdate.grid(column=3, row=1, padx=10, pady=10)
+    botaoUpdate.grid(column=3, row=1, padx=10, pady=10, sticky="nsew")
 
     botaoDelete = Button(janelaFuncionarios, text="Deletar navios", command=deleta_navios, height=5, width=30)
-    botaoDelete.grid(column=4, row=1, padx=10, pady=10)
+    botaoDelete.grid(column=4, row=1, padx=10, pady=10, sticky="nsew")
 
     # =======================================================================================================
     # Inputs de texto
 
-    Label(janelaFuncionarios, text="Código do navio:").grid(row=4, column=0)
+    Label(janelaFuncionarios, text="Código do navio:").grid(row=4, column=0, sticky="nsew")
     e1 = Entry(janelaFuncionarios)
-    e1.grid(row=4, column=1)
+    e1.grid(row=4, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Origem:").grid(row=6, column=0)
+    Label(janelaFuncionarios, text="Origem:").grid(row=6, column=0, sticky="nsew")
     e3 = Entry(janelaFuncionarios)
-    e3.grid(row=6, column=1)
+    e3.grid(row=6, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Destino::").grid(row=5, column=0)
+    Label(janelaFuncionarios, text="Destino::").grid(row=5, column=0, sticky="nsew")
     e2 = Entry(janelaFuncionarios)
-    e2.grid(row=5, column=1)
+    e2.grid(row=5, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Capacidade de containeres:").grid(row=7, column=0)
+    Label(janelaFuncionarios, text="Capacidade de containeres:").grid(row=7, column=0, sticky="nsew")
     e4 = Entry(janelaFuncionarios)
-    e4.grid(row=7, column=1)
+    e4.grid(row=7, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Capacidade de tripulação:").grid(row=8, column=0)
+    Label(janelaFuncionarios, text="Capacidade de tripulação:").grid(row=8, column=0, sticky="nsew")
     e5 = Entry(janelaFuncionarios)
-    e5.grid(row=8, column=1)
+    e5.grid(row=8, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Nome do navio:").grid(row=9, column=0)
+    Label(janelaFuncionarios, text="Nome do navio:").grid(row=9, column=0, sticky="nsew")
     e6 = Entry(janelaFuncionarios)
-    e6.grid(row=9, column=1)
+    e6.grid(row=9, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Diretorio foto em C:\\arquivo.jpg navio:").grid(row=10, column=0)
+    Label(janelaFuncionarios, text="Diretorio foto em C:\\arquivo.jpg navio:").grid(row=10, column=0, sticky="nsew")
     e7 = Entry(janelaFuncionarios)
-    e7.grid(row=10, column=1)
+    e7.grid(row=10, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="ID da equipe:").grid(row=11, column=0)
+    Label(janelaFuncionarios, text="ID da equipe:").grid(row=11, column=0, sticky="nsew")
     e8 = Entry(janelaFuncionarios)
-    e8.grid(row=11, column=1)
+    e8.grid(row=11, column=1, sticky="nsew")
     
+    Grid.columnconfigure(janelaFuncionarios, 0, weight = 1)
+    Grid.columnconfigure(janelaFuncionarios, 1, weight = 1)
+    Grid.columnconfigure(janelaFuncionarios, 2, weight = 1)
+    Grid.columnconfigure(janelaFuncionarios, 3, weight = 1)
+    Grid.columnconfigure(janelaFuncionarios, 4, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 1, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 2, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 3, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 4, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 5, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 6, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 7, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 8, weight = 1)
 
     janelaFuncionarios.mainloop()
 
@@ -264,39 +288,49 @@ def abre_tela_equipes():
     #Botões
 
     botaoCreate = Button(janelaFuncionarios, text="Adicionar equipes", command=adiciona_equipes, height=5, width=30)
-    botaoCreate.grid(column=0, row=1, padx=10, pady=10)
+    botaoCreate.grid(column=0, row=1, padx=10, pady=10, sticky="nsew")
 
     botaoRead = Button(janelaFuncionarios, text="Mostrar equipes", command=mostra_equipes, height=5, width=30)
-    botaoRead.grid(column=1, row=1, padx=10, pady=10)
+    botaoRead.grid(column=1, row=1, padx=10, pady=10, sticky="nsew")
 
     botaoUpdate = Button(janelaFuncionarios, text="Atualizar equipes", command=altera_equipes, height=5, width=30)
-    botaoUpdate.grid(column=2, row=1, padx=10, pady=10)
+    botaoUpdate.grid(column=2, row=1, padx=10, pady=10, sticky="nsew")
 
     botaoDelete = Button(janelaFuncionarios, text="Deletar equipes", command=deleta_equipes, height=5, width=30)
-    botaoDelete.grid(column=3, row=1, padx=10, pady=10)
+    botaoDelete.grid(column=3, row=1, padx=10, pady=10, sticky="nsew")
 
     # =======================================================================================================
     # Inputs de texto
 
-    Label(janelaFuncionarios, text="ID da equipe:").grid(row=4, column=0)
+    Label(janelaFuncionarios, text="ID da equipe:").grid(row=4, column=0, sticky="nsew")
     e1 = Entry(janelaFuncionarios)
-    e1.grid(row=4, column=1)
+    e1.grid(row=4, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Função da equipe:").grid(row=5, column=0)
+    Label(janelaFuncionarios, text="Função da equipe:").grid(row=5, column=0, sticky="nsew")
     e2 = Entry(janelaFuncionarios)
-    e2.grid(row=5, column=1)
+    e2.grid(row=5, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Quantidade de funcionários:").grid(row=6, column=0)
+    Label(janelaFuncionarios, text="Quantidade de funcionários:").grid(row=6, column=0, sticky="nsew")
     e3 = Entry(janelaFuncionarios)
-    e3.grid(row=6, column=1)
+    e3.grid(row=6, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Turno:").grid(row=7, column=0)
+    Label(janelaFuncionarios, text="Turno:").grid(row=7, column=0, sticky="nsew")
     e4 = Entry(janelaFuncionarios)
-    e4.grid(row=7, column=1)
+    e4.grid(row=7, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Codinome:").grid(row=8, column=0)
+    Label(janelaFuncionarios, text="Codinome:").grid(row=8, column=0, sticky="nsew")
     e5 = Entry(janelaFuncionarios)
-    e5.grid(row=8, column=1)
+    e5.grid(row=8, column=1, sticky="nsew")
+
+    Grid.columnconfigure(janelaFuncionarios, 0, weight = 1)
+    Grid.columnconfigure(janelaFuncionarios, 1, weight = 1)
+    Grid.columnconfigure(janelaFuncionarios, 2, weight = 1)
+    Grid.columnconfigure(janelaFuncionarios, 3, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 1, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 2, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 3, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 4, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 5, weight = 1)
 
     janelaFuncionarios.mainloop()
 
@@ -339,50 +373,61 @@ def abre_tela_atividades_navio():
     janelaFuncionarios = Tk()
 
     bem_vindo_funcionario = Label(janelaFuncionarios, text="Comandos para mexer com atividades de navios:")
-    bem_vindo_funcionario.grid(column=0, row=0, padx=10, pady=10)
+    bem_vindo_funcionario.grid(column=0, row=0, padx=10, pady=10, sticky="nsew")
 
 
     # =======================================================================================================
     #Botões
 
     botaoCreate = Button(janelaFuncionarios, text="Adicionar atividade", command=adiciona_atividades, height=5, width=30)
-    botaoCreate.grid(column=0, row=1, padx=10, pady=10)
+    botaoCreate.grid(column=0, row=1, padx=10, pady=10, sticky="nsew")
 
     botaoRead = Button(janelaFuncionarios, text="Mostrar atividades", command=mostra_atividades, height=5, width=30)
-    botaoRead.grid(column=1, row=1, padx=10, pady=10)
+    botaoRead.grid(column=1, row=1, padx=10, pady=10, sticky="nsew")
 
     botaoUpdate = Button(janelaFuncionarios, text="Atualizar atividades", command=altera_atividades, height=5, width=30)
-    botaoUpdate.grid(column=2, row=1, padx=10, pady=10)
+    botaoUpdate.grid(column=2, row=1, padx=10, pady=10, sticky="nsew")
 
     botaoDelete = Button(janelaFuncionarios, text="Deletar atividades", command=deleta_atividades, height=5, width=30)
-    botaoDelete.grid(column=3, row=1, padx=10, pady=10)
+    botaoDelete.grid(column=3, row=1, padx=10, pady=10, sticky="nsew")
 
     # =======================================================================================================
     # Inputs de texto
 
-    Label(janelaFuncionarios, text="ID da atividade:").grid(row=4, column=0)
+    Label(janelaFuncionarios, text="ID da atividade:").grid(row=4, column=0, sticky="nsew")
     e1 = Entry(janelaFuncionarios)
-    e1.grid(row=4, column=1)
+    e1.grid(row=4, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Quantidade de containers embarcados:").grid(row=5, column=0)
+    Label(janelaFuncionarios, text="Quantidade de containers embarcados:").grid(row=5, column=0, sticky="nsew")
     e2 = Entry(janelaFuncionarios)
-    e2.grid(row=5, column=1)
+    e2.grid(row=5, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Quantidade de containers desembarcados:").grid(row=6, column=0)
+    Label(janelaFuncionarios, text="Quantidade de containers desembarcados:").grid(row=6, column=0, sticky="nsew")
     e3 = Entry(janelaFuncionarios)
-    e3.grid(row=6, column=1)
+    e3.grid(row=6, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Dia de chegada:").grid(row=7, column=0)
+    Label(janelaFuncionarios, text="Dia de chegada:").grid(row=7, column=0, sticky="nsew")
     e4 = Entry(janelaFuncionarios)
-    e4.grid(row=7, column=1)
+    e4.grid(row=7, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Dia de partida:").grid(row=8, column=0)
+    Label(janelaFuncionarios, text="Dia de partida:").grid(row=8, column=0, sticky="nsew")
     e5 = Entry(janelaFuncionarios)
-    e5.grid(row=8, column=1)
+    e5.grid(row=8, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="ID do navio:").grid(row=9, column=0)
+    Label(janelaFuncionarios, text="ID do navio:").grid(row=9, column=0, sticky="nsew")
     e6 = Entry(janelaFuncionarios)
-    e6.grid(row=9, column=1)
+    e6.grid(row=9, column=1, sticky="nsew")
+
+    Grid.columnconfigure(janelaFuncionarios, 0, weight = 1)
+    Grid.columnconfigure(janelaFuncionarios, 1, weight = 1)
+    Grid.columnconfigure(janelaFuncionarios, 2, weight = 1)
+    Grid.columnconfigure(janelaFuncionarios, 3, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 1, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 2, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 3, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 4, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 5, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 6, weight = 1)
 
     janelaFuncionarios.mainloop()
 
@@ -432,44 +477,54 @@ def abre_tela_funcionarios():
     #Botões
 
     botaoCreate = Button(janelaFuncionarios, text="Adicionar funcionário", command=adiciona_funcionarios, height=5, width=30)
-    botaoCreate.grid(column=0, row=1, padx=10, pady=10)
+    botaoCreate.grid(column=0, row=1, padx=10, pady=10, sticky="nsew")
 
     botaoRead = Button(janelaFuncionarios, text="Mostrar funcionários", command=mostra_funcionarios, height=5, width=30)
-    botaoRead.grid(column=1, row=1, padx=10, pady=10)
+    botaoRead.grid(column=1, row=1, padx=10, pady=10, sticky="nsew")
 
     botaoUpdate = Button(janelaFuncionarios, text="Atualizar funcionário", command=altera_funcionarios, height=5, width=30)
-    botaoUpdate.grid(column=2, row=1, padx=10, pady=10)
+    botaoUpdate.grid(column=2, row=1, padx=10, pady=10, sticky="nsew")
 
     botaoDelete = Button(janelaFuncionarios, text="Deletar funcionário", command=deleta_funcionarios, height=5, width=30)
-    botaoDelete.grid(column=3, row=1, padx=10, pady=10)
+    botaoDelete.grid(column=3, row=1, padx=10, pady=10, sticky="nsew")
 
     # =======================================================================================================
     # Inputs de texto
 
-    Label(janelaFuncionarios, text="CPF do Funcionário:").grid(row=4, column=0)
+    Label(janelaFuncionarios, text="CPF do Funcionário:").grid(row=4, column=0, sticky="nsew")
     e1 = Entry(janelaFuncionarios)
-    e1.grid(row=4, column=1)
+    e1.grid(row=4, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Nome do Funcionário:").grid(row=5, column=0)
+    Label(janelaFuncionarios, text="Nome do Funcionário:").grid(row=5, column=0, sticky="nsew")
     e2 = Entry(janelaFuncionarios)
-    e2.grid(row=5, column=1)
+    e2.grid(row=5, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Cargo do Funcionário:").grid(row=6, column=0)
+    Label(janelaFuncionarios, text="Cargo do Funcionário:").grid(row=6, column=0, sticky="nsew")
     e3 = Entry(janelaFuncionarios)
-    e3.grid(row=6, column=1)
+    e3.grid(row=6, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Tempo de trabalho:").grid(row=7, column=0)
+    Label(janelaFuncionarios, text="Tempo de trabalho:").grid(row=7, column=0, sticky="nsew")
     e4 = Entry(janelaFuncionarios)
-    e4.grid(row=7, column=1)
+    e4.grid(row=7, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Data de nascimento:").grid(row=8, column=0)
+    Label(janelaFuncionarios, text="Data de nascimento:").grid(row=8, column=0, sticky="nsew")
     e5 = Entry(janelaFuncionarios)
-    e5.grid(row=8, column=1)
+    e5.grid(row=8, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="ID da equipe:").grid(row=9, column=0)
+    Label(janelaFuncionarios, text="ID da equipe:").grid(row=9, column=0, sticky="nsew")
     e6 = Entry(janelaFuncionarios)
-    e6.grid(row=9, column=1)
+    e6.grid(row=9, column=1, sticky="nsew")
 
+    Grid.columnconfigure(janelaFuncionarios, 0, weight = 1)
+    Grid.columnconfigure(janelaFuncionarios, 1, weight = 1)
+    Grid.columnconfigure(janelaFuncionarios, 2, weight = 1)
+    Grid.columnconfigure(janelaFuncionarios, 3, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 1, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 2, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 3, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 4, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 5, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 6, weight = 1)
 
     janelaFuncionarios.mainloop()
 
@@ -523,52 +578,64 @@ def abre_tela_caminhoes():
     #Botões
 
     botaoCreate = Button(janelaFuncionarios, text="Adicionar caminhão", command=adiciona_caminhoes, height=5, width=30)
-    botaoCreate.grid(column=0, row=1, padx=10, pady=10)
+    botaoCreate.grid(column=0, row=1, padx=10, pady=10, sticky="nsew")
 
     botaoRead = Button(janelaFuncionarios, text="Mostrar caminhões", command=mostra_caminhoes, height=5, width=30)
-    botaoRead.grid(column=1, row=1, padx=10, pady=10)
+    botaoRead.grid(column=1, row=1, padx=10, pady=10, sticky="nsew")
 
     botaoUpdate = Button(janelaFuncionarios, text="Atualizar caminhão", command=altera_caminhoes, height=5, width=30)
-    botaoUpdate.grid(column=2, row=1, padx=10, pady=10)
+    botaoUpdate.grid(column=2, row=1, padx=10, pady=10, sticky="nsew")
 
     botaoDelete = Button(janelaFuncionarios, text="Deletar caminhão", command=deleta_caminhoes, height=5, width=30)
-    botaoDelete.grid(column=3, row=1, padx=10, pady=10)
+    botaoDelete.grid(column=3, row=1, padx=10, pady=10, sticky="nsew")
 
     # =======================================================================================================
     # Inputs de texto
 
-    Label(janelaFuncionarios, text="Placa do caminhão:").grid(row=4, column=0)
+    Label(janelaFuncionarios, text="Placa do caminhão:").grid(row=4, column=0, sticky="nsew")
     e1 = Entry(janelaFuncionarios)
-    e1.grid(row=4, column=1)
+    e1.grid(row=4, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Capacidade de containers:").grid(row=5, column=0)
+    Label(janelaFuncionarios, text="Capacidade de containers:").grid(row=5, column=0, sticky="nsew")
     e2 = Entry(janelaFuncionarios)
-    e2.grid(row=5, column=1)
+    e2.grid(row=5, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Ano de fabricação:").grid(row=6, column=0)
+    Label(janelaFuncionarios, text="Ano de fabricação:").grid(row=6, column=0, sticky="nsew")
     e3 = Entry(janelaFuncionarios)
-    e3.grid(row=6, column=1)
+    e3.grid(row=6, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Marca do caminhão:").grid(row=7, column=0)
+    Label(janelaFuncionarios, text="Marca do caminhão:").grid(row=7, column=0, sticky="nsew")
     e4 = Entry(janelaFuncionarios)
-    e4.grid(row=7, column=1)
+    e4.grid(row=7, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Modelo do caminhão:").grid(row=8, column=0)
+    Label(janelaFuncionarios, text="Modelo do caminhão:").grid(row=8, column=0, sticky="nsew")
     e5 = Entry(janelaFuncionarios)
-    e5.grid(row=8, column=1)
+    e5.grid(row=8, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Cor do caminhão:").grid(row=9, column=0)
+    Label(janelaFuncionarios, text="Cor do caminhão:").grid(row=9, column=0, sticky="nsew")
     e6 = Entry(janelaFuncionarios)
-    e6.grid(row=9, column=1)
+    e6.grid(row=9, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Ultima revisão do caminhão:").grid(row=10, column=0)
+    Label(janelaFuncionarios, text="Ultima revisão do caminhão:").grid(row=10, column=0, sticky="nsew")
     e7 = Entry(janelaFuncionarios)
-    e7.grid(row=10, column=1)
+    e7.grid(row=10, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="CPF do funcionário responsável:").grid(row=11, column=0)
+    Label(janelaFuncionarios, text="CPF do funcionário responsável:").grid(row=11, column=0, sticky="nsew")
     e8 = Entry(janelaFuncionarios)
-    e8.grid(row=11, column=1)
+    e8.grid(row=11, column=1, sticky="nsew")
 
+    Grid.columnconfigure(janelaFuncionarios, 0, weight = 1)
+    Grid.columnconfigure(janelaFuncionarios, 1, weight = 1)
+    Grid.columnconfigure(janelaFuncionarios, 2, weight = 1)
+    Grid.columnconfigure(janelaFuncionarios, 3, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 1, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 2, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 3, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 4, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 5, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 6, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 7, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 8, weight = 1)
 
     janelaFuncionarios.mainloop()
 
@@ -620,47 +687,59 @@ def abre_tela_gruas():
     #Botões
 
     botaoCreate = Button(janelaFuncionarios, text="Adicionar grua", command=adiciona_gruas, height=5, width=30)
-    botaoCreate.grid(column=0, row=1, padx=10, pady=10)
+    botaoCreate.grid(column=0, row=1, padx=10, pady=10, sticky="nsew")
 
     botaoRead = Button(janelaFuncionarios, text="Mostrar gruas", command=mostra_gruas, height=5, width=30)
-    botaoRead.grid(column=1, row=1, padx=10, pady=10)
+    botaoRead.grid(column=1, row=1, padx=10, pady=10, sticky="nsew")
 
     botaoUpdate = Button(janelaFuncionarios, text="Atualizar grua", command=altera_gruas, height=5, width=30)
-    botaoUpdate.grid(column=2, row=1, padx=10, pady=10)
+    botaoUpdate.grid(column=2, row=1, padx=10, pady=10, sticky="nsew")
 
     botaoDelete = Button(janelaFuncionarios, text="Deletar grua", command=deleta_gruas, height=5, width=30)
-    botaoDelete.grid(column=3, row=1, padx=10, pady=10)
+    botaoDelete.grid(column=3, row=1, padx=10, pady=10, sticky="nsew")
 
     # =======================================================================================================
     # Inputs de texto
 
-    Label(janelaFuncionarios, text="ID da grua:").grid(row=4, column=0)
+    Label(janelaFuncionarios, text="ID da grua:").grid(row=4, column=0, sticky="nsew")
     e1 = Entry(janelaFuncionarios)
-    e1.grid(row=4, column=1)
+    e1.grid(row=4, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Altura em metros:").grid(row=5, column=0)
+    Label(janelaFuncionarios, text="Altura em metros:").grid(row=5, column=0, sticky="nsew")
     e2 = Entry(janelaFuncionarios)
-    e2.grid(row=5, column=1)
+    e2.grid(row=5, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Alcance em metros:").grid(row=6, column=0)
+    Label(janelaFuncionarios, text="Alcance em metros:").grid(row=6, column=0, sticky="nsew")
     e3 = Entry(janelaFuncionarios)
-    e3.grid(row=6, column=1)
+    e3.grid(row=6, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Fabricante:").grid(row=7, column=0)
+    Label(janelaFuncionarios, text="Fabricante:").grid(row=7, column=0, sticky="nsew")
     e4 = Entry(janelaFuncionarios)
-    e4.grid(row=7, column=1)
+    e4.grid(row=7, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Capacidade de carga em kg:").grid(row=8, column=0)
+    Label(janelaFuncionarios, text="Capacidade de carga em kg:").grid(row=8, column=0, sticky="nsew")
     e5 = Entry(janelaFuncionarios)
-    e5.grid(row=8, column=1)
+    e5.grid(row=8, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Última revisão:").grid(row=9, column=0)
+    Label(janelaFuncionarios, text="Última revisão:").grid(row=9, column=0, sticky="nsew")
     e6 = Entry(janelaFuncionarios)
-    e6.grid(row=9, column=1)
+    e6.grid(row=9, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="CPF do funcionário responsável:").grid(row=11, column=0)
+    Label(janelaFuncionarios, text="CPF do funcionário responsável:").grid(row=11, column=0, sticky="nsew")
     e7 = Entry(janelaFuncionarios)
-    e7.grid(row=11, column=1)
+    e7.grid(row=11, column=1, sticky="nsew")
+
+    Grid.columnconfigure(janelaFuncionarios, 0, weight = 1)
+    Grid.columnconfigure(janelaFuncionarios, 1, weight = 1)
+    Grid.columnconfigure(janelaFuncionarios, 2, weight = 1)
+    Grid.columnconfigure(janelaFuncionarios, 3, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 1, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 2, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 3, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 4, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 5, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 6, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 7, weight = 1)
 
     janelaFuncionarios.mainloop()
 
@@ -712,48 +791,59 @@ def abre_tela_empilhadeiras():
     #Botões
 
     botaoCreate = Button(janelaFuncionarios, text="Adicionar empilhadeira", command=adiciona_empilhadeiras, height=5, width=30)
-    botaoCreate.grid(column=0, row=1, padx=10, pady=10)
+    botaoCreate.grid(column=0, row=1, padx=10, pady=10, sticky="nsew")
 
     botaoRead = Button(janelaFuncionarios, text="Mostrar empilhadeiras", command=mostra_empilhadeiras, height=5, width=30)
-    botaoRead.grid(column=1, row=1, padx=10, pady=10)
+    botaoRead.grid(column=1, row=1, padx=10, pady=10, sticky="nsew")
 
     botaoUpdate = Button(janelaFuncionarios, text="Atualizar empilhadeira", command=altera_empilhadeiras, height=5, width=30)
-    botaoUpdate.grid(column=2, row=1, padx=10, pady=10)
+    botaoUpdate.grid(column=2, row=1, padx=10, pady=10, sticky="nsew")
 
     botaoDelete = Button(janelaFuncionarios, text="Deletar empilhadeira", command=deleta_empilhadeiras, height=5, width=30)
-    botaoDelete.grid(column=3, row=1, padx=10, pady=10)
+    botaoDelete.grid(column=3, row=1, padx=10, pady=10, sticky="nsew")
 
     # =======================================================================================================
     # Inputs de texto
 
-    Label(janelaFuncionarios, text="Placa:").grid(row=4, column=0)
+    Label(janelaFuncionarios, text="Placa:").grid(row=4, column=0, sticky="nsew")
     e1 = Entry(janelaFuncionarios)
-    e1.grid(row=4, column=1)
+    e1.grid(row=4, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Modelo:").grid(row=5, column=0)
+    Label(janelaFuncionarios, text="Modelo:").grid(row=5, column=0, sticky="nsew")
     e2 = Entry(janelaFuncionarios)
-    e2.grid(row=5, column=1)
+    e2.grid(row=5, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Fabricante:").grid(row=6, column=0)
+    Label(janelaFuncionarios, text="Fabricante:").grid(row=6, column=0, sticky="nsew")
     e3 = Entry(janelaFuncionarios)
-    e3.grid(row=6, column=1)
+    e3.grid(row=6, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Capacidade de carga em kg:").grid(row=7, column=0)
+    Label(janelaFuncionarios, text="Capacidade de carga em kg:").grid(row=7, column=0, sticky="nsew")
     e4 = Entry(janelaFuncionarios)
-    e4.grid(row=7, column=1)
+    e4.grid(row=7, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Alcance em metros:").grid(row=8, column=0)
+    Label(janelaFuncionarios, text="Alcance em metros:").grid(row=8, column=0, sticky="nsew")
     e5 = Entry(janelaFuncionarios)
-    e5.grid(row=8, column=1)
+    e5.grid(row=8, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Última revisão:").grid(row=9, column=0)
+    Label(janelaFuncionarios, text="Última revisão:").grid(row=9, column=0, sticky="nsew")
     e6 = Entry(janelaFuncionarios)
-    e6.grid(row=9, column=1)
+    e6.grid(row=9, column=1, sticky="nsew")
 
-    # NAO COLOQUEI FOREIGN KEY DE ID FUNCIONARIO
-    Label(janelaFuncionarios, text="CPF do funcionário responsável:").grid(row=11, column=0)
+    Label(janelaFuncionarios, text="CPF do funcionário responsável:").grid(row=11, column=0, sticky="nsew")
     e7 = Entry(janelaFuncionarios)
-    e7.grid(row=11, column=1)
+    e7.grid(row=11, column=1, sticky="nsew")
+
+    Grid.columnconfigure(janelaFuncionarios, 0, weight = 1)
+    Grid.columnconfigure(janelaFuncionarios, 1, weight = 1)
+    Grid.columnconfigure(janelaFuncionarios, 2, weight = 1)
+    Grid.columnconfigure(janelaFuncionarios, 3, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 1, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 2, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 3, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 4, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 5, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 6, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 7, weight = 1)
 
     janelaFuncionarios.mainloop()
 
@@ -800,40 +890,49 @@ def abre_tela_atividades_porto():
     #Botões
 
     botaoCreate = Button(janelaFuncionarios, text="Adicionar area", command=adiciona_atividades, height=5, width=30)
-    botaoCreate.grid(column=0, row=1, padx=10, pady=10)
+    botaoCreate.grid(column=0, row=1, padx=10, pady=10, sticky="nsew")
 
     botaoRead = Button(janelaFuncionarios, text="Mostrar areas", command=mostra_atividades, height=5, width=30)
-    botaoRead.grid(column=1, row=1, padx=10, pady=10)
+    botaoRead.grid(column=1, row=1, padx=10, pady=10, sticky="nsew")
 
     botaoUpdate = Button(janelaFuncionarios, text="Atualizar areas", command=altera_atividades, height=5, width=30)
-    botaoUpdate.grid(column=2, row=1, padx=10, pady=10)
+    botaoUpdate.grid(column=2, row=1, padx=10, pady=10, sticky="nsew")
 
     botaoDelete = Button(janelaFuncionarios, text="Deletar areas", command=deleta_atividades, height=5, width=30)
-    botaoDelete.grid(column=3, row=1, padx=10, pady=10)
+    botaoDelete.grid(column=3, row=1, padx=10, pady=10, sticky="nsew")
 
     # =======================================================================================================
     # Inputs de texto
 
-    Label(janelaFuncionarios, text="ID da atividade:").grid(row=4, column=0)
+    Label(janelaFuncionarios, text="ID da atividade:").grid(row=4, column=0, sticky="nsew")
     e1 = Entry(janelaFuncionarios)
-    e1.grid(row=4, column=1)
+    e1.grid(row=4, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="ID da equipe:").grid(row=5, column=0)
+    Label(janelaFuncionarios, text="ID da equipe:").grid(row=5, column=0, sticky="nsew")
     e2 = Entry(janelaFuncionarios)
-    e2.grid(row=5, column=1)
+    e2.grid(row=5, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Atribuição da equipe:").grid(row=6, column=0)
+    Label(janelaFuncionarios, text="Atribuição da equipe:").grid(row=6, column=0, sticky="nsew")
     e3 = Entry(janelaFuncionarios)
-    e3.grid(row=6, column=1)
+    e3.grid(row=6, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Horario de inicio da atribuição:").grid(row=7, column=0)
+    Label(janelaFuncionarios, text="Horario de inicio da atribuição:").grid(row=7, column=0, sticky="nsew")
     e4 = Entry(janelaFuncionarios)
-    e4.grid(row=7, column=1)
+    e4.grid(row=7, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Horario de final da atribuição:").grid(row=8, column=0)
+    Label(janelaFuncionarios, text="Horario de final da atribuição:").grid(row=8, column=0, sticky="nsew")
     e5 = Entry(janelaFuncionarios)
-    e5.grid(row=8, column=1)
+    e5.grid(row=8, column=1, sticky="nsew")
 
+    Grid.columnconfigure(janelaFuncionarios, 0, weight = 1)
+    Grid.columnconfigure(janelaFuncionarios, 1, weight = 1)
+    Grid.columnconfigure(janelaFuncionarios, 2, weight = 1)
+    Grid.columnconfigure(janelaFuncionarios, 3, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 1, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 2, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 3, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 4, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 5, weight = 1)
 
     janelaFuncionarios.mainloop()
 
@@ -883,48 +982,59 @@ def abre_tela_container():
     #Botões
 
     botaoCreate = Button(janelaFuncionarios, text="Adicionar Container", command=adiciona_container, height=5, width=30)
-    botaoCreate.grid(column=0, row=1, padx=10, pady=10)
+    botaoCreate.grid(column=0, row=1, padx=10, pady=10, sticky="nsew")
 
     botaoRead = Button(janelaFuncionarios, text="Mostrar Containers", command=mostra_container, height=5, width=30)
-    botaoRead.grid(column=1, row=1, padx=10, pady=10)
+    botaoRead.grid(column=1, row=1, padx=10, pady=10, sticky="nsew")
 
     botaoUpdate = Button(janelaFuncionarios, text="Atualizar Container", command=altera_container, height=5, width=30)
-    botaoUpdate.grid(column=2, row=1, padx=10, pady=10)
+    botaoUpdate.grid(column=2, row=1, padx=10, pady=10, sticky="nsew")
 
     botaoDelete = Button(janelaFuncionarios, text="Deletar Container", command=deleta_container, height=5, width=30)
-    botaoDelete.grid(column=3, row=1, padx=10, pady=10)
+    botaoDelete.grid(column=3, row=1, padx=10, pady=10, sticky="nsew")
 
     # =======================================================================================================
     # Inputs de texto
 
-    Label(janelaFuncionarios, text="ID do container:").grid(row=4, column=0)
+    Label(janelaFuncionarios, text="ID do container:").grid(row=4, column=0, sticky="nsew")
     e1 = Entry(janelaFuncionarios)
-    e1.grid(row=4, column=1)
+    e1.grid(row=4, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Peso do container em kg:").grid(row=5, column=0)
+    Label(janelaFuncionarios, text="Peso do container em kg:").grid(row=5, column=0, sticky="nsew")
     e2 = Entry(janelaFuncionarios)
-    e2.grid(row=5, column=1)
+    e2.grid(row=5, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Tipo de carga:").grid(row=6, column=0)
+    Label(janelaFuncionarios, text="Tipo de carga:").grid(row=6, column=0, sticky="nsew")
     e3 = Entry(janelaFuncionarios)
-    e3.grid(row=6, column=1)
+    e3.grid(row=6, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Volume do container:").grid(row=7, column=0)
+    Label(janelaFuncionarios, text="Volume do container:").grid(row=7, column=0, sticky="nsew")
     e4 = Entry(janelaFuncionarios)
-    e4.grid(row=7, column=1)
+    e4.grid(row=7, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Fornecedor do container:").grid(row=8, column=0)
+    Label(janelaFuncionarios, text="Fornecedor do container:").grid(row=8, column=0, sticky="nsew")
     e5 = Entry(janelaFuncionarios)
-    e5.grid(row=8, column=1)
+    e5.grid(row=8, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Código de espaço para container:").grid(row=9, column=0)
+    Label(janelaFuncionarios, text="Código de espaço para container:").grid(row=9, column=0, sticky="nsew")
     e6 = Entry(janelaFuncionarios)
-    e6.grid(row=9, column=1)
+    e6.grid(row=9, column=1, sticky="nsew")
 
-    Label(janelaFuncionarios, text="Código de navio associado:").grid(row=10, column=0)
+    Label(janelaFuncionarios, text="Código de navio associado:").grid(row=10, column=0, sticky="nsew")
     e7 = Entry(janelaFuncionarios)
-    e7.grid(row=10, column=1)
+    e7.grid(row=10, column=1, sticky="nsew")
 
+    Grid.columnconfigure(janelaFuncionarios, 0, weight = 1)
+    Grid.columnconfigure(janelaFuncionarios, 1, weight = 1)
+    Grid.columnconfigure(janelaFuncionarios, 2, weight = 1)
+    Grid.columnconfigure(janelaFuncionarios, 3, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 1, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 2, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 3, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 4, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 5, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 6, weight = 1)
+    Grid.rowconfigure(janelaFuncionarios, 7, weight = 1)
 
     janelaFuncionarios.mainloop()
 
